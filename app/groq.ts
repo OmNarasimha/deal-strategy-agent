@@ -33,7 +33,7 @@ export const extractInsights = async (content: string, source: string = 'Call') 
   try {
     const response = await groq.chat.completions.create({
       messages: [{ role: "user", content: prompt }],
-      model: "llama-3.3-70b-versatile",
+      model: "llama-3.1-8b-instant",
       response_format: { type: "json_object" }
     });
 
@@ -102,7 +102,7 @@ export const generateAdvancedStrategy = async (currentDeal: any, history: any[],
   try {
     const response = await groq.chat.completions.create({
       messages: [{ role: "user", content: prompt }],
-      model: "llama-3.3-70b-versatile",
+      model: "llama-3.1-8b-instant",
       response_format: { type: "json_object" }
     });
 
@@ -161,7 +161,7 @@ export const generateFullSampleDeal = async (companyName: string) => {
   try {
     const response = await groq.chat.completions.create({
       messages: [{ role: "user", content: prompt }],
-      model: "llama-3.3-70b-versatile",
+      model: "llama-3.1-8b-instant",
       response_format: { type: "json_object" }
     });
 
@@ -185,7 +185,7 @@ export const generateSyntheticTranscript = async (companyName: string) => {
 
   const response = await groq.chat.completions.create({
     messages: [{ role: "user", content: prompt }],
-    model: "llama-3.3-70b-versatile",
+    model: "llama-3.1-8b-instant",
   });
 
   return response.choices[0].message.content || "";
